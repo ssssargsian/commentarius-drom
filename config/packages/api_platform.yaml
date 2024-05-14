@@ -1,0 +1,36 @@
+api_platform:
+  title: Commentarius Drom API
+  version: 1.0.0
+  formats:
+    jsonld: ['application/ld+json']
+    json: ['application/json']
+    html: ['text/html']
+  docs_formats:
+    jsonld: ['application/ld+json']
+    jsonopenapi: ['application/vnd.openapi+json']
+    html: ['text/html']
+  patch_formats:
+    json: ['application/json']
+  event_listeners_backward_compatibility_layer: false
+  keep_legacy_inflector: false
+  mapping:
+    paths:
+      - '%kernel.project_dir%/src/Entity'
+  defaults:
+    pagination_client_items_per_page: true
+    pagination_items_per_page: 20
+    pagination_maximum_items_per_page: 100
+  collection:
+    pagination:
+      items_per_page_parameter_name: pageSize
+  eager_loading:
+    max_joins: 50
+  exception_to_status:
+    ApiPlatform\Core\Exception\FilterValidationException: 400
+    ApiPlatform\Core\Exception\ItemNotFoundException: 404
+    ApiPlatform\Core\Exception\InvalidArgumentException: 400
+    Doctrine\ORM\OptimisticLockException: 409
+    Symfony\Component\Serializer\Exception\ExceptionInterface: 400
+    Webmozart\Assert\InvalidArgumentException: 400
+    DomainException: 400
+  enable_re_doc: false
