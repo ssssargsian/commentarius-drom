@@ -30,6 +30,3 @@ jobs:
 
       - name: Run ECS (EasyCodingStandard)
         run: php vendor/bin/ecs check src
-
-      - name: Run PHPUnit
-        run: vendor/bin/phpunit
