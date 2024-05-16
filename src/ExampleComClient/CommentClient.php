@@ -13,8 +13,8 @@ final readonly class CommentClient
 {
     public function __construct(
         private string $baseUrl = 'http://example.com',
-        private Client $client = new Client(),
-    ) {
+        private Client $client = new Client(), //Todo лучше не зашивать и использовать PSR клиент
+    ){
     }
 
     public function getComments(): mixed
