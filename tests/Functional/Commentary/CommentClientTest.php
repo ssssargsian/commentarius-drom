@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Functional\Commentary;
 
-use App\ExampleClient\CommentClient;
+use App\ExampleComClient\CommentClient;
 use PHPUnit\Framework\TestCase;
 
 final class CommentClientTest extends TestCase

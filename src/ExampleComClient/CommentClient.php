@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\ExampleClient;
+namespace App\ExampleComClient;
 
 use ErrorException;
 use GuzzleHttp\Client;
