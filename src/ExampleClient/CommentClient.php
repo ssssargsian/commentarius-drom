@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\ExampleComClient;
+namespace App\ExampleClient;
 
 use ErrorException;
 use GuzzleHttp\Client;
@@ -13,7 +13,7 @@ final readonly class CommentClient
 {
     public function __construct(
         private string $baseUrl = 'http://example.com',
-        private Client $client = new Client(), //Todo лучше не зашивать и использовать PSR клиент
+        private Client $client = new Client(),
     ){
     }
 
