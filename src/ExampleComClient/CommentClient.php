@@ -6,6 +6,7 @@ namespace App\ExampleComClient;
 
 use ErrorException;
 use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use JsonException;
 use Psr\Http\Message\ResponseInterface;
 
@@ -13,7 +14,7 @@ final readonly class CommentClient
 {
     public function __construct(
         private string $baseUrl = 'http://example.com',
-        private Client $client = new Client(),
+        private ClientInterface $client = new Client(),
     ){
     }
 
