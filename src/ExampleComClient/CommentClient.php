@@ -12,7 +12,7 @@ use Psr\Http\Message\ResponseInterface;
 final readonly class CommentClient
 {
     public function __construct(
-        private string $baseUrl,
+        private string $baseUrl = 'http://example.com',
         private Client $client = new Client(),
     ) {
     }
@@ -40,7 +40,7 @@ final readonly class CommentClient
         return json_decode($response->getBody()->getContents(), true);
     }
 
-    public function updateComment($id, $name, $text): mixed
+    public function updateComment(int $id, string $name, string $text): mixed
     {
         $response = $this->client->put($this->baseUrl . '/comment/' . $id, [
             'json' => [
